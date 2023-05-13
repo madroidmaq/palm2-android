@@ -47,6 +47,13 @@ android {
 }
 
 dependencies {
+    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
+    implementation("io.grpc:grpc-okhttp:1.53.0")
+    implementation("io.grpc:grpc-stub:1.54.0")
+    implementation("io.grpc:grpc-protobuf:1.54.0")
+    implementation("com.google.api:gax:2.26.0")
+    implementation("com.google.api:gax-grpc:2.26.0")
+    implementation("com.google.api:gax-grpc:2.26.0")
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
