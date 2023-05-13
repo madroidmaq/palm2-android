@@ -1,4 +1,4 @@
-package com.madroid.app
+package com.madroid.palm2.app
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,7 +11,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.madroid.app.ui.theme.Palm2Theme
-import com.madroid.palm2.app.TextSampleUi
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +20,8 @@ class MainActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
 //                    Greeting("Android")
-                    TextSampleUi()
+//                    TextSampleUi()
+                    ChatSampleUi()
                 }
             }
         }
@@ -41,6 +41,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 fun GreetingPreview() {
     Palm2Theme {
 //        Greeting("Android")
-        TextSampleUi()
+//        TextSampleUi()
+        ChatSampleUi()
     }
 }
