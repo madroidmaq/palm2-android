@@ -34,7 +34,9 @@
 
 目前官方文档中提供的仅有 `Bison` 和 `Gecko` 两个模型，其中可以离线运行在手机上的 `Gecko` 模型并不支持文本生成及对话的能力。
 
-可以看出官方文档中的信息与 Google I/O '23 中的信息是还是有些出入的，可能是文档还没有及时更新吧（🤔）。
+![](docs/model_gecko.png)
+
+可以看出官方文档中的信息与 Google I/O '23 中的信息是还是有些出入的，想要让 `Gecko` 运行在手机本地应该还有一段路要走，当然也可能是文档还没有及时更新吧（🤔）。
 
 下面我们就看一下如何使用 [Rest API](https://developers.generativeai.google/api) 以及 [SDK](https://developers.generativeai.google/tutorials/text_android_quickstart) 的方式实现文本生成以及对话的功能。
 
