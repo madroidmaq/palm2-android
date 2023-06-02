@@ -193,7 +193,7 @@ private fun createPrompt(
 ```kotlin
 private fun createTextRequest(prompt: TextPrompt): GenerateTextRequest {
     return GenerateTextRequest.newBuilder()
-        .setModel("models/chat-bison-001") // Required, which model to use to generate the result
+        .setModel("models/text-bison-001") // Required, which model to use to generate the result
         .setPrompt(prompt) // Required
         .setTemperature(0.5f) // Optional, controls the randomness of the output
         .setCandidateCount(1) // Optional, the number of generated texts to return
