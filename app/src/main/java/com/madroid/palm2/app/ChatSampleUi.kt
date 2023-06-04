@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -13,6 +14,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -30,6 +32,15 @@ fun ChatSampleUi(
 ) {
     val (inputText, setInputText) = remember { mutableStateOf("") }
     val messages: List<Message> by viewModel.messages.collectAsState()
+
+    val listState = rememberLazyListState()
+    LaunchedEffect(messages) {
+        // itemsList 更新后，手动滚动到顶部
+        if (messages.isNotEmpty()) {
+            listState.scrollToItem(messages.size - 1)
+        }
+    }
+
     Column(
         modifier = Modifier.padding(all = 16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
@@ -50,6 +61,7 @@ fun ChatSampleUi(
         }
         LazyColumn(
             modifier = Modifier.fillMaxWidth(),
+            state = listState,
             reverseLayout = true
         ) {
             items(messages.size) { index ->
